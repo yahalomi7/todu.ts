@@ -17,11 +17,25 @@ const router = createBrowserRouter([
     element:<RegisterPage/>
   }
 ])
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+
 
 const App: React.FC = () => {
   return (
     <Container>
+       <ThemeProvider theme={darkTheme}>
+      <CssBaseline /> 
       <RouterProvider router={router}/>
+    </ThemeProvider>
+     
 
    
     </Container>
